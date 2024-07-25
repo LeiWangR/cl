@@ -5,17 +5,17 @@ This code is based on [MIFA-Lab/contrastive2021](https://github.com/MIFA-Lab/con
 ## Model
 
 - SimCLR
-- Barlow Twins
 - MoCo
 - SimSiam
+- Barlow Twins
 
 ## Augmentation
 
-- Random Cropping
-- Random Gaussian Blur
-- Color Dropping
-- Color Distortion
-- Random Horizontal Flipping
+- Random cropping
+- Random gaussian blur
+- Color dropping
+- Color distortion
+- Random horizontal flipping
 
 ## Installation
 ```bash
