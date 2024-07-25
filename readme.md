@@ -38,7 +38,7 @@ pip install -r requirements.txt     # install the dependencies
 
 ## Citation
 
-If you find our work useful in your research, please consider citing:
+You can cite the following paper for the use of this work:
 
 ```
 @article{wang2023adaptive,
