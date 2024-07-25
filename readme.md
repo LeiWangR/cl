@@ -24,7 +24,7 @@ source venv/bin/activate            # activate the environment
 pip install -r requirements.txt     # install the dependencies
 ```
 
-## Sample code
+## Description
 
 ```console
 ├── cl
