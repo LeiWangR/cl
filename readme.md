@@ -1,5 +1,7 @@
 # Adaptive Multi-head Contrastive Learning (AMCL)
 
+## 0. Summary
+
 ### Part 1: Motivation
 
 In (a), each column denotes positive (green dots) or negative instances (red dots) with corresponding similarity measures. Additional augmentations can cause positive samples to appear dissimilar and occasionally make negative samples seem similar. The table in (a) shows the original similarity measure (in gray) and the similarity scores from our method (in black).
