@@ -1,6 +1,8 @@
 # Adaptive Multi-head Contrastive Learning (AMCL)
 
-**Motivation:** In (a), each column denotes positive (green dots) or negative instances (red dots) with corresponding similarity measures. Additional augmentations can cause positive samples to appear dissimilar and occasionally make negative samples seem similar. The table in (a) shows the original similarity measure (in gray) and the similarity scores from our method (in black).
+### Part 1: Motivation
+
+In (a), each column denotes positive (green dots) or negative instances (red dots) with corresponding similarity measures. Additional augmentations can cause positive samples to appear dissimilar and occasionally make negative samples seem similar. The table in (a) shows the original similarity measure (in gray) and the similarity scores from our method (in black).
 
 (b)-(d): for traditional contrastive learning methods, when increasing the number of augmentations from 1 to 5, similarities of more positive pairs drop below 0.5, causing more significant overlapping regions between histograms of positive (orange) and negative (blue) pairs. 
 
@@ -8,7 +10,9 @@ In comparison, our multi-head approach (e)-(g) yields better separation of posit
 
 ![Alt Text](https://github.com/LeiWangR/cl/blob/main/images/motivation.png)
 
-**Comparison:** A comparison of (a) the standard constant-temperature, single-head approach and (b)–(c) our adaptive temperature, single- and multi-head approaches. 
+### Part 2: Model comparison
+
+A comparison of (a) the standard constant-temperature, single-head approach and (b)–(c) our adaptive temperature, single- and multi-head approaches. 
 
 In each subfigure, the first light blue trapezoid represents the base encoder, the second light blue trapezoid signifies the MLP projection head, and the third light orange trapezoid denotes the shared MLP layer for learning the temperature parameters. In (c), the projection head is replicated C times to capture diverse image content. 
 
@@ -18,7 +22,7 @@ The learned temperatures, along with the projected features, are seamlessly inco
 
 ![Alt Text](https://github.com/LeiWangR/cl/blob/main/images/comparison.png)
 
-**Standard contrastive learning loss *vs.* AMCL loss:**
+### Part 3: Loss comparison
 
 - Standard contrastive learning methods and their loss functions:
 
@@ -59,6 +63,8 @@ Our approach, Adaptive Multi-Head Contrastive Learning (AMCL), can be applied to
 - SimSiam
 - Barlow Twins
 
+Pretrained models for CIFAR-10 and CIFAR-100 can be downloaded [here](123).
+
 ## 4. Augmentation
 
 We consider five different types of transformations for data augmentations:
@@ -69,7 +75,27 @@ We consider five different types of transformations for data augmentations:
 - Color distortion
 - Random horizontal flipping
 
-## 5. Citation
+## 5. Train & eval
+```
+# parameters
+model=simclr
+epochs=800
+augs=default
+num_runs=10
+timestamp=`date '+%s'`
+
+# preparation
+SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
+cd ${SHELL_FOLDER}/../
+if [ ! -d "./results" ]; then
+    mkdir ./results
+fi
+
+# train and eval
+python train_eval.py --model=${model} --epochs=${epochs} --augs=${augs} --num_runs=${num_runs} | tee ./results/"${timestamp}_${model}_epochs_${epochs}_augs_${augs}".txt
+```
+
+## 6. Citation
 
 You can cite the following paper for the use of this work:
 
