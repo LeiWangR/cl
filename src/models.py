@@ -4,6 +4,8 @@ import pytorch_lightning as pl
 import lightly
 import torch.nn.functional as F
 from src.util import knn_predict
+from amcl_components.adaptive_temperature import AdaptiveTemperature
+from amcl_components.multi_head_projector import MultiHeadProjector
 
 knn_k = 200
 knn_t = 0.1
@@ -116,6 +118,67 @@ class SimCLRModel(BenchmarkModule):
             optim, self.epochs)
         return [optim], [scheduler]
 
+class AMCLSimCLRModel(BenchmarkModule):
+    def __init__(self, dataloader_kNN, epochs, num_heads=3, input_dim=512, output_dim=128):
+        super().__init__(dataloader_kNN, epochs)
+        self.num_heads = num_heads
+
+        # Create a ResNet backbone and remove the classification head
+        resnet = lightly.models.ResNetGenerator('resnet-18')
+        self.backbone = nn.Sequential(
+            *list(resnet.children())[:-1],
+            nn.AdaptiveAvgPool2d(1),
+        )
+
+        # Create multi-head projection layers
+        self.multi_head_projector = MultiHeadProjector(input_dim, output_dim, num_heads=self.num_heads)
+
+        # Adaptive temperature module for scaling similarities
+        self.adaptive_temp = AdaptiveTemperature(input_dim=output_dim, num_heads=self.num_heads)
+
+        # Define contrastive loss (NT-Xent)
+        self.criterion = NTXentLoss()
+
+    def forward(self, x):
+        # Extract features using the ResNet backbone
+        features = self.backbone(x)
+        # Pass the features through the multi-head projector
+        projections = self.multi_head_projector(features.flatten(start_dim=1))
+        return projections
+
+    def training_step(self, batch, batch_idx):
+        (x0, x1), _, _ = batch
+        
+        # Forward pass for both views (x0 and x1)
+        proj_x0 = self(x0)
+        proj_x1 = self(x1)
+
+        # Compute adaptive temperature-scaled similarities for each head
+        scaled_similarities, reg_term = self.adaptive_temp(proj_x0, proj_x1)
+
+        # Compute the NT-Xent loss using the scaled similarities for each head
+        total_loss = 0.0
+        for head_idx in range(self.num_heads):
+            loss = -torch.log(torch.exp(scaled_similarities[head_idx]) / (
+                torch.exp(scaled_similarities[head_idx]) + torch.exp(-scaled_similarities[head_idx])))
+            total_loss += loss.mean()
+
+        # Add the regularization term for the temperature
+        total_loss += reg_term
+
+        # self.log('train_loss_ssl', total_loss)
+        return total_loss
+
+    def configure_optimizers(self):
+        optim = torch.optim.SGD(
+            self.parameters(),
+            lr=6e-2,
+            momentum=0.9,
+            weight_decay=5e-4
+        )
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+            optim, self.epochs)
+        return [optim], [scheduler]
 
 class MocoModel(BenchmarkModule):
     def __init__(self, dataloader_kNN, epochs, memory_bank_size=4096):
