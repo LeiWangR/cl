@@ -1,21 +1,4 @@
-# CL (to be updated)
-
-This code is based on [MIFA-Lab/contrastive2021](https://github.com/MIFA-Lab/contrastive2021).
-
-## Model
-
-- SimCLR
-- MoCo
-- SimSiam
-- Barlow Twins
-
-## Augmentation
-
-- Random cropping
-- Random gaussian blur
-- Color dropping
-- Color distortion
-- Random horizontal flipping
+# CL
 
 ## Installation
 ```bash
@@ -36,16 +19,34 @@ pip install -r requirements.txt     # install the dependencies
     ├── train_eval.py              // training and evaluation script
 ```
 
+## Model
+
+- SimCLR
+- MoCo
+- SimSiam
+- Barlow Twins
+
+## Augmentation
+
+- Random cropping
+- Random gaussian blur
+- Color dropping
+- Color distortion
+- Random horizontal flipping
+
 ## Citation
 
 You can cite the following paper for the use of this work:
 
 ```
-@article{wang2023adaptive,
+@inproceedings{wang2024adaptive,
   title={Adaptive multi-head contrastive learning},
   author={Wang, Lei and Koniusz, Piotr and Gedeon, Tom and Zheng, Liang},
-  journal={arXiv preprint arXiv:2310.05615},
-  year={2023}
+  booktitle={European Conference on Computer Vision},
+  year={2024},
+  organization={Springer}
 }
 ```
+### Acknowledgment
+This code is based on [MIFA-Lab/contrastive2021](https://github.com/MIFA-Lab/contrastive2021).
 
