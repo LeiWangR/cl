@@ -1,8 +1,8 @@
 # Adaptive Multi-head Contrastive Learning (AMCL)
 
-## 0. Summary
+## 1. Summary
 
-### Part 1: Motivation
+### 1.1: Motivation
 
 In (a), each column denotes positive (green dots) or negative instances (red dots) with corresponding similarity measures. Additional augmentations can cause positive samples to appear dissimilar and occasionally make negative samples seem similar. The table in (a) shows the original similarity measure (in gray) and the similarity scores from our method (in black).
 
@@ -12,7 +12,7 @@ In comparison, our multi-head approach (e)-(g) yields better separation of posit
 
 ![Alt Text](https://github.com/LeiWangR/cl/blob/main/images/motivation.png)
 
-### Part 2: Model comparison
+### 1.2: Model comparison
 
 A comparison of (a) the standard constant-temperature, single-head approach and (b)–(c) our adaptive temperature, single- and multi-head approaches. 
 
@@ -24,7 +24,7 @@ The learned temperatures, along with the projected features, are seamlessly inco
 
 ![Alt Text](https://github.com/LeiWangR/cl/blob/main/images/comparison.png)
 
-### Part 3: Loss comparison
+### 1.3: Loss comparison
 
 - Standard contrastive learning methods and their loss functions:
 
@@ -34,15 +34,6 @@ The learned temperatures, along with the projected features, are seamlessly inco
 
 ![Alt Text](https://github.com/LeiWangR/cl/blob/main/images/table2.png)
 
-
-## 1. Installation
-
-Follow these steps to set up the environment:
-```bash
-python -m venv venv                 # create a virtual environment named venv
-source venv/bin/activate            # activate the environment
-pip install -r requirements.txt     # install the dependencies
-```
 
 ## 2. Structure
 
@@ -56,7 +47,17 @@ pip install -r requirements.txt     # install the dependencies
     ├── train_eval.py              // training and evaluation script
 ```
 
-## 3. Model
+
+## 3. Installation
+
+Follow these steps to set up the environment:
+```bash
+python -m venv venv                 # create a virtual environment named venv
+source venv/bin/activate            # activate the environment
+pip install -r requirements.txt     # install the dependencies
+```
+
+## 4. Model & data augmentation
 
 Our approach, Adaptive Multi-Head Contrastive Learning (AMCL), can be applied to and experimentally enhances several popular contrastive learning methods such as:
 
@@ -64,10 +65,6 @@ Our approach, Adaptive Multi-Head Contrastive Learning (AMCL), can be applied to
 - MoCo
 - SimSiam
 - Barlow Twins
-
-Pretrained models for CIFAR-10 and CIFAR-100 can be downloaded [here](123).
-
-## 4. Augmentation
 
 We consider five different types of transformations for data augmentations:
 
@@ -96,6 +93,9 @@ fi
 # train and eval
 python train_eval.py --model=${model} --epochs=${epochs} --augs=${augs} --num_runs=${num_runs} | tee ./results/"${timestamp}_${model}_epochs_${epochs}_augs_${augs}".txt
 ```
+
+Pretrained models for CIFAR-10 and CIFAR-100 can be downloaded [here](123).
+
 
 ## 6. Citation
 
