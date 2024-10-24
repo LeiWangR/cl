@@ -87,9 +87,6 @@ timestamp=`date '+%s'`
 python train_eval.py --model=${model} --epochs=${epochs} --augs=${augs} --num_runs=${num_runs} | tee ./results/"${timestamp}_${model}_epochs_${epochs}_augs_${augs}".txt
 ```
 
-Pretrained models for CIFAR-10 and CIFAR-100 can be downloaded [here](https://drive.google.com/file/d/1eslfusBa9jmJtgzbu7ekaRbxZxmud7zK/view?usp=sharing).
-
-
 ## 6. Citation
 
 You can cite the following paper for the use of this work:
