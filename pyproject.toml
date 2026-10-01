@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amcl-eccv2024"
+version = "1.0.0"
+description = "Adaptive Multi-head Contrastive Learning (ECCV 2024)"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.1,<3",
+  "torchvision>=0.16,<1",
+  "numpy>=1.24,<3",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["amcl*"]
