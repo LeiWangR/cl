@@ -1,4 +1,4 @@
-# Adaptive Multi-head Contrastive Learning (AMCL)
+# AMCL (v2.0)
 
 *This release removes outdated dependencies from AMCL and updates the implementation and training pipeline for improved compatibility and stability.*
 
