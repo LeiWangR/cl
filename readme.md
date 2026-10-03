@@ -23,7 +23,7 @@ cl/
 ├── eval_linear.py              # frozen-encoder linear evaluation
 ├── train.py                    # CLI entry point
 ├── requirements.txt
-├── pyproject.toml
+└── pyproject.toml
 ```
 
 ## Installation
