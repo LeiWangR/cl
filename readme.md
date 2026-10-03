@@ -24,8 +24,6 @@ cl/
 ├── train.py                    # CLI entry point
 ├── requirements.txt
 ├── pyproject.toml
-├── CITATION.cff
-└── CHANGELOG.md
 ```
 
 ## Installation
