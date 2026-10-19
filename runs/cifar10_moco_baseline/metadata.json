@@ -1,0 +1,43 @@
+{
+  "name": "cifar10_moco_baseline",
+  "test_top1_percent": 88.98,
+  "checkpoint_kind": "encoder_only",
+  "host": "gadi",
+  "files": [
+    {
+      "name": "last.pt",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_moco_baseline_seed0/last.pt",
+      "bytes": 140261178,
+      "sha256": "f59fa15b515d069c28a5fc849f8b3d3c5d2220dc297a628b3ac2e0d03191ca9b"
+    },
+    {
+      "name": "config.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_moco_baseline_seed0/config.json",
+      "bytes": 901,
+      "sha256": "1f5df09c51b0d750e6d21070e4e01add07db853e4b7887381b7035095562a40f"
+    },
+    {
+      "name": "history.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_moco_baseline_seed0/history.json",
+      "bytes": 163061,
+      "sha256": "f4d93ce1a0ab996745e7583e549602d2e6cbd4727901965ec9af70a3c84bd0ce"
+    },
+    {
+      "name": "run.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_moco_baseline_seed0/run.json",
+      "bytes": 26667,
+      "sha256": "8e8f7c4596a82c1b9edb03e03606a0fa6dec658c659d7dc82db5aa91b0e76669"
+    },
+    {
+      "name": "linear.log",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_moco_baseline_seed0/linear.log",
+      "bytes": 141,
+      "sha256": "1155276c2089f5a61e3aab42fed965e7557924cf997d929fa711bde8cd6e95f3"
+    }
+  ],
+  "seed": 0,
+  "checksum_verified": true,
+  "note": "Encoder checkpoint only: the original evaluation did not save its linear classifier. The recorded test accuracy comes from linear.log; refit a classifier before testing.",
+  "encoder_epoch": 1000,
+  "core_load_verified": true
+}

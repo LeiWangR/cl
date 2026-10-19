@@ -1,0 +1,114 @@
+[
+  {
+    "name": "cifar100_barlow_twins_amcl",
+    "test_top1_percent": 60.21,
+    "checkpoint_kind": "encoder_and_classifier",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar100_barlow_twins_baseline",
+    "test_top1_percent": 56.63,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar100_moco_amcl",
+    "test_top1_percent": 60.26,
+    "checkpoint_kind": "encoder_and_classifier",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar100_moco_baseline",
+    "test_top1_percent": 57.24,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar100_simclr_amcl",
+    "test_top1_percent": 61.17,
+    "checkpoint_kind": "encoder_and_classifier",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar100_simclr_baseline",
+    "test_top1_percent": 55.7,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar100_simsiam_amcl",
+    "test_top1_percent": 54.02,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar100_simsiam_baseline",
+    "test_top1_percent": 51.87,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_barlow_twins_amcl",
+    "test_top1_percent": 89.37,
+    "checkpoint_kind": "encoder_and_classifier",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_barlow_twins_baseline",
+    "test_top1_percent": 88.4,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_moco_amcl",
+    "test_top1_percent": 89.76,
+    "checkpoint_kind": "encoder_and_classifier",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_moco_baseline",
+    "test_top1_percent": 88.98,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_simclr_amcl",
+    "test_top1_percent": 90.16,
+    "checkpoint_kind": "encoder_and_classifier",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_simclr_baseline",
+    "test_top1_percent": 90.56,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_simsiam_amcl",
+    "test_top1_percent": 87.04,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  },
+  {
+    "name": "cifar10_simsiam_baseline",
+    "test_top1_percent": 86.44,
+    "checkpoint_kind": "encoder_only",
+    "seed": 0,
+    "checksum_verified": true
+  }
+]

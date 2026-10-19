@@ -1,0 +1,52 @@
+{
+  "name": "cifar10_moco_amcl_beta1e5",
+  "checkpoint": "/workspace/amcl-moco-search/patch/runs/moco_oneway_full_cifar10_beta1e5_20261017/training/cifar10_moco_amcl_beta1e5.best.pt",
+  "scope": "validation",
+  "accuracy": 0.9007999897003174,
+  "train_examples": 45000,
+  "validation_examples": 5000,
+  "official_test_used": true,
+  "encoder_epoch": 950,
+  "checkpoint_selection": {
+    "scope": "validation",
+    "metric": "knn_accuracy",
+    "accuracy": 0.8896,
+    "epoch": 950,
+    "eval_every": 50,
+    "tie_break": "earliest_epoch"
+  },
+  "classifier_epochs": 100,
+  "lr": 0.1,
+  "weight_decay": 0.0,
+  "momentum": 0.9,
+  "schedule": "cosine",
+  "batch_size": 512,
+  "seed": 0,
+  "encoder_frozen": true,
+  "feature_preprocessing": "Deterministic Resize32/ToTensor/ImageNet normalization; cached raw encoder output in FP32",
+  "selection": "Final classifier epoch100; no classifier hyperparameter search",
+  "loss_mode": "oneway_ablation",
+  "params": {
+    "amcl": true,
+    "lr": 0.08,
+    "weight_decay": 0.0005,
+    "eta": 0.03,
+    "iota": 0.04,
+    "beta": 1e-05,
+    "topk": 100,
+    "momentum": 0.99,
+    "queue_size": 4096,
+    "temperature_lr_scale": 0.01,
+    "loss_mode": "oneway_ablation",
+    "allow_prune": false,
+    "heads": 3,
+    "grad_clip": 1.0
+  },
+  "seconds": 6.069984415000363,
+  "protocol_sha256": "bf02721daa56e5db07a5073703b2486db7e24b81698158453a6592380b175c5c",
+  "official_test": {
+    "correct": 8976,
+    "examples": 10000,
+    "accuracy": 0.8976
+  }
+}

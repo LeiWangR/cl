@@ -1,0 +1,43 @@
+{
+  "name": "cifar10_barlow_twins_baseline",
+  "test_top1_percent": 88.4,
+  "checkpoint_kind": "encoder_only",
+  "host": "gadi",
+  "files": [
+    {
+      "name": "last.pt",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_barlow_twins_baseline_seed0/last.pt",
+      "bytes": 165134220,
+      "sha256": "6a80ae7aa90b7ba398f6d858075994efbec4515a026517bccd350b0c45407e20"
+    },
+    {
+      "name": "config.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_barlow_twins_baseline_seed0/config.json",
+      "bytes": 917,
+      "sha256": "dcaa1a177b725b9997acd7690f53d07522b98f41207b152fae90f2dac75cb930"
+    },
+    {
+      "name": "history.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_barlow_twins_baseline_seed0/history.json",
+      "bytes": 161150,
+      "sha256": "af75aa791b9faedd973124635b5b7470626c81bfba5b4f0f13e33e12b007ff57"
+    },
+    {
+      "name": "run.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_barlow_twins_baseline_seed0/run.json",
+      "bytes": 26522,
+      "sha256": "ea5a9986bc42e1da6587433e4e1a1c2920100717148cccebf8f6d4219b9bdf4e"
+    },
+    {
+      "name": "linear.log",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar10_barlow_twins_baseline_seed0/linear.log",
+      "bytes": 141,
+      "sha256": "de17a47dde7fdcadedc7dd48e93a606f360480af156d0dba8e9123ecf847985b"
+    }
+  ],
+  "seed": 0,
+  "checksum_verified": true,
+  "note": "Encoder checkpoint only: the original evaluation did not save its linear classifier. The recorded test accuracy comes from linear.log; refit a classifier before testing.",
+  "encoder_epoch": 1000,
+  "core_load_verified": true
+}

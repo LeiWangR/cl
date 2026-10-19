@@ -1,0 +1,81 @@
+{
+  "status": "completed",
+  "scope": "official_test",
+  "pbs_job_id": "181542944.gadi-pbs",
+  "metadata": {
+    "dataset": "cifar100",
+    "tid": 17,
+    "params": {
+      "beta": 8.419801315457466e-07,
+      "eta": 0.7967992115257492,
+      "iota": 0.008462938329699571,
+      "lr": 0.0467032388809851,
+      "weight_decay": 0.000299501049315049
+    },
+    "split_sha256": "b470f1b4c42e2d441365c2a620e2ee79971f4fbf9055e5bed7459a12c64e7997",
+    "checkpoint_selection": {
+      "scope": "validation",
+      "metric": "validation_knn_accuracy",
+      "split_sha256": "b470f1b4c42e2d441365c2a620e2ee79971f4fbf9055e5bed7459a12c64e7997",
+      "eval_every": 50,
+      "checkpoint": "best.pt",
+      "epoch": 900,
+      "accuracy": 0.6146,
+      "tie_break": "earliest_epoch"
+    },
+    "source_checkpoint": "/g/data/yp87/jz3513/checkpoints/amcl/barlow_amcl_amp_search_v2/trials/cifar100_barlow_amcl_017/best.pt",
+    "source_checkpoint_sha256": "b7ccac10f811ab5f745dbd393f5bd728e1cb6f6886b47c0a91f0b363e7ce48ca",
+    "train_examples": 45000,
+    "validation_examples": 5000,
+    "test_examples": 10000,
+    "probe_epochs": 100,
+    "batch_size": 512,
+    "lr": 0.1,
+    "momentum": 0.9,
+    "weight_decay": 0,
+    "seed": 0,
+    "original_validation": {
+      "accuracy": 0.6034,
+      "loss": 0.39659999999999995,
+      "scope": "validation",
+      "examples": 5000,
+      "probe_epochs": 100,
+      "split_sha256": "b470f1b4c42e2d441365c2a620e2ee79971f4fbf9055e5bed7459a12c64e7997",
+      "checkpoint_selection": {
+        "scope": "validation",
+        "metric": "validation_knn_accuracy",
+        "split_sha256": "b470f1b4c42e2d441365c2a620e2ee79971f4fbf9055e5bed7459a12c64e7997",
+        "eval_every": 50,
+        "checkpoint": "best.pt",
+        "epoch": 900,
+        "accuracy": 0.6146,
+        "tie_break": "earliest_epoch"
+      }
+    },
+    "replay_validation": {
+      "correct": 3017,
+      "examples": 5000,
+      "accuracy": 0.6034
+    },
+    "worker_sources": {
+      "amcl/__init__.py": "ffb3a541d6d590ae2369dd022dda48d20ad3fb31006feaa01661f9985cc35e20",
+      "amcl/augmentations.py": "fa37fa300da32cd3f28dc811af5c1af9b3424a8470e3231d7586af49bfb77c90",
+      "amcl/backbones.py": "15caa0d8ffe1ac0a2d7fbba0af4e2ad94cc1dea39290443a57668e9318eddc9c",
+      "amcl/datasets.py": "7b0b18c79452327e4ad276238cce6797f1bcb5a1cd3a6f3644dba6c64c6ad65e",
+      "amcl/evaluation.py": "61f9697af782f90708f575a3527021c668f18382667decde0a64438d55183bbf",
+      "amcl/losses.py": "8f9e1fda3b5557c03d71730af698609998dc6a46cb6f368eb955a680092e9b08",
+      "amcl/models.py": "6ad2824e18e973b1632a5829a8e9c19f8e69528e5304b805d7ef4c5220e98941",
+      "amcl/train.py": "9ae8644bec12c0776314b90386a800b9b73e8ac9cbe62074f6e845614d08a5bf",
+      "patch/train.py": "59b08d8b91f2a5d973dda373fd948c978ef67ac17e2dd15500a807119c2b006d",
+      "eval_linear.py": "e6c139992dc9f512b39aebded73894149421202a02787f242a2265ef2d03879a",
+      "patch/scripts/gadi_search.py": "471a6227a9f2452d80b0f34a68885b9d3af12f076160e26233b710c2b69ede9c",
+      "patch/scripts/gadi_search.pbs": "be5b4ab822950b0220fc6c7ec8af5f6175dcf5574a182b4eae4cf6716bcd59ae"
+    }
+  },
+  "test": {
+    "correct": 6021,
+    "examples": 10000,
+    "accuracy": 0.6021
+  },
+  "elapsed_seconds": 379.402788243955
+}

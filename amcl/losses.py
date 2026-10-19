@@ -247,7 +247,12 @@ class AMCLNTXentLoss(nn.Module):
 
 
 class AMCLMoCoLoss(nn.Module):
-    """AMCL Eq. (2.1) for MoCo queue negatives."""
+    """One-way AMCL objective for MoCo: online queries against key/queue targets.
+
+    The caller supplies momentum keys and queue entries without gradients.
+    Unlike the previous symmetric implementation, no reverse key-anchor term
+    is included. Per-head objectives are summed.
+    """
 
     def __init__(
         self,
@@ -296,9 +301,9 @@ class AMCLMoCoLoss(nn.Module):
         for h in range(self.num_heads):
             qh, kh = q[:, h], k[:, h]
             bank = queue[h].transpose(0, 1)
-            # Symmetric two-view queue objective; the same queue is used as a
-            # memory bank for both directions.
-            per_head.append(0.5 * (self._direction(qh, kh, bank) + self._direction(kh, qh, bank)))
+            # Only q is produced by the trainable online encoder. A reverse
+            # key-anchor negative term cannot directly train that encoder.
+            per_head.append(self._direction(qh, kh, bank))
         return torch.stack(per_head).sum()
 
 

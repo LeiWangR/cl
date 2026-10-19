@@ -1,0 +1,10 @@
+{
+  "scope": "validation",
+  "metric": "validation_knn_accuracy",
+  "split_sha256": "151fb65cea8535b22f389752caa203327a040c34941ba81c630e3c72f533d78d",
+  "eval_every": 50,
+  "checkpoint": "best.pt",
+  "epoch": 950,
+  "accuracy": 0.8908,
+  "tie_break": "earliest_epoch"
+}
