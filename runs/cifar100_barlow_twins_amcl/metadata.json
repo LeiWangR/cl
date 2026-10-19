@@ -1,0 +1,55 @@
+{
+  "name": "cifar100_barlow_twins_amcl",
+  "test_top1_percent": 60.21,
+  "checkpoint_kind": "encoder_and_classifier",
+  "host": "gadi",
+  "files": [
+    {
+      "name": "best.pt",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/barlow_amcl_amp_search_v2/trials/cifar100_barlow_amcl_017/best.pt",
+      "bytes": 317532808,
+      "sha256": "b7ccac10f811ab5f745dbd393f5bd728e1cb6f6886b47c0a91f0b363e7ce48ca"
+    },
+    {
+      "name": "config.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/barlow_amcl_amp_search_v2/trials/cifar100_barlow_amcl_017/config.json",
+      "bytes": 1342,
+      "sha256": "074882a9cf158ef0570858c5b2c10f2a77ebc7b43cedbf8b8e3fb82de3c87fb0"
+    },
+    {
+      "name": "checkpoint_selection.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/barlow_amcl_amp_search_v2/trials/cifar100_barlow_amcl_017/checkpoint_selection.json",
+      "bytes": 271,
+      "sha256": "75efad3c3640ea3a06512c8cb0cbed85b2088c63176c067c3d550f4940ed7eac"
+    },
+    {
+      "name": "linear_probe.pt",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/test_evaluations/barlow_amp_search_v2/cifar100_trial017/181542944.gadi-pbs/linear_probe.pt",
+      "bytes": 159078172,
+      "sha256": "c441aba7fae6b6b5f363114a79ed04af82338c9f2854b4dd87a7f8cef0e96819"
+    },
+    {
+      "name": "result.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/test_evaluations/barlow_amp_search_v2/cifar100_trial017/181542944.gadi-pbs/result.json",
+      "bytes": 3258,
+      "sha256": "225a4084cf6c46637237d5ce8acb2af9934b332770e7ea3130ef8a29daf34a93"
+    },
+    {
+      "name": "split.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/splits/cifar100.json",
+      "bytes": 539055,
+      "sha256": "9adcce7527ec8e88bf684ddac9e0eda2b2ddd8933397e69e18b040e760b5742c"
+    },
+    {
+      "name": "manifest.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/barlow_amcl_amp_search_v2/manifests/cifar100_barlow_amcl_017.json",
+      "bytes": 4184,
+      "sha256": "430715589815ca0d5665a14e4f46a28f54f6a0a62c2de9cb0139123d8a467ff3"
+    }
+  ],
+  "seed": 0,
+  "checksum_verified": true,
+  "note": "linear_probe.pt contains the selected encoder and trained classifier used for the recorded official-test result.",
+  "encoder_epoch": 900,
+  "core_load_verified": true
+}

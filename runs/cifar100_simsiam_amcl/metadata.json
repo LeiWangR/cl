@@ -1,0 +1,43 @@
+{
+  "name": "cifar100_simsiam_amcl",
+  "test_top1_percent": 54.02,
+  "checkpoint_kind": "encoder_only",
+  "host": "gadi",
+  "files": [
+    {
+      "name": "last.pt",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar100_simsiam_amcl_seed0/last.pt",
+      "bytes": 371134766,
+      "sha256": "d6ce924236a5e322c1ac6762c183cf4f6ec5312f4afcf87176971e05fa8fc534"
+    },
+    {
+      "name": "config.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar100_simsiam_amcl_seed0/config.json",
+      "bytes": 906,
+      "sha256": "80051487cdee1882fcab07477d266fb875f51e41363a11e08cfe620c8478b2a1"
+    },
+    {
+      "name": "history.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar100_simsiam_amcl_seed0/history.json",
+      "bytes": 160789,
+      "sha256": "6cdf802dcb381464c3444a83ed133a5e8f3f0d9495fb173929ce4bfdd4897a34"
+    },
+    {
+      "name": "run.json",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar100_simsiam_amcl_seed0/run.json",
+      "bytes": 26473,
+      "sha256": "1a339ce69333ff3332e7745b221ad41ede13f6a30ce320e01b9e2bac4e3284ac"
+    },
+    {
+      "name": "linear.log",
+      "source": "/g/data/yp87/jz3513/checkpoints/amcl/default_abcde_methods_v1/cifar100_simsiam_amcl_seed0/linear.log",
+      "bytes": 141,
+      "sha256": "51624a6bfa986e71787ad1bb7044365530b5169f94910746f8cd28f3fb9d429f"
+    }
+  ],
+  "seed": 0,
+  "checksum_verified": true,
+  "note": "Encoder checkpoint only: the original evaluation did not save its linear classifier. The recorded test accuracy comes from linear.log; refit a classifier before testing.",
+  "encoder_epoch": 1000,
+  "core_load_verified": true
+}

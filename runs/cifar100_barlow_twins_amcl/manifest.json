@@ -1,0 +1,98 @@
+{
+  "jobs": [
+    {
+      "dataset": "cifar100",
+      "variant": "amcl",
+      "method": "barlow_twins",
+      "tid": 17,
+      "mode": "trial",
+      "params": {
+        "beta": 8.419801315457466e-07,
+        "eta": 0.7967992115257492,
+        "iota": 0.008462938329699571,
+        "lr": 0.0467032388809851,
+        "weight_decay": 0.000299501049315049
+      },
+      "output": "/g/data/yp87/jz3513/checkpoints/amcl/barlow_amcl_amp_search_v2/trials/cifar100_barlow_amcl_017",
+      "data_root": "/g/data/yp87/jz3513/datasets",
+      "split": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/splits/cifar100.json",
+      "split_sha256": "b470f1b4c42e2d441365c2a620e2ee79971f4fbf9055e5bed7459a12c64e7997",
+      "protocol": {
+        "version": 2,
+        "split_seed": 0,
+        "train_size": 45000,
+        "validation_size": 5000,
+        "aug": "abcde",
+        "ssl_epochs": 1000,
+        "linear_epochs": 100,
+        "batch_size": 512,
+        "train_seed": 0,
+        "probe_lr": 0.1,
+        "probe_weight_decay": 0,
+        "objective": "1-validation_linear_accuracy",
+        "trial_budget_per_study": 200,
+        "checkpoint_selection": "best_validation_knn",
+        "checkpoint_eval_every": 50,
+        "search_seed": 20261007,
+        "paper_alignment": "Published core settings; split and search distributions are local choices",
+        "ranges": {
+          "lr": [
+            0.01,
+            0.2
+          ],
+          "weight_decay": [
+            1e-06,
+            0.001
+          ],
+          "eta": [
+            0.01,
+            2.0
+          ],
+          "iota": [
+            0.001,
+            2.0
+          ],
+          "beta": [
+            1e-08,
+            0.001
+          ]
+        },
+        "method": "barlow_twins",
+        "search_algorithm": "Hyperopt random: 196 random candidates plus 4 fixed anchors",
+        "amp_initial_scale": 1.0,
+        "consecutive_overflow_limit": null
+      },
+      "source_sha256": {
+        "amcl/__init__.py": "ffb3a541d6d590ae2369dd022dda48d20ad3fb31006feaa01661f9985cc35e20",
+        "amcl/augmentations.py": "fa37fa300da32cd3f28dc811af5c1af9b3424a8470e3231d7586af49bfb77c90",
+        "amcl/backbones.py": "15caa0d8ffe1ac0a2d7fbba0af4e2ad94cc1dea39290443a57668e9318eddc9c",
+        "amcl/datasets.py": "7b0b18c79452327e4ad276238cce6797f1bcb5a1cd3a6f3644dba6c64c6ad65e",
+        "amcl/evaluation.py": "61f9697af782f90708f575a3527021c668f18382667decde0a64438d55183bbf",
+        "amcl/losses.py": "8f9e1fda3b5557c03d71730af698609998dc6a46cb6f368eb955a680092e9b08",
+        "amcl/models.py": "6ad2824e18e973b1632a5829a8e9c19f8e69528e5304b805d7ef4c5220e98941",
+        "amcl/train.py": "9ae8644bec12c0776314b90386a800b9b73e8ac9cbe62074f6e845614d08a5bf",
+        "patch/train.py": "59b08d8b91f2a5d973dda373fd948c978ef67ac17e2dd15500a807119c2b006d",
+        "eval_linear.py": "e6c139992dc9f512b39aebded73894149421202a02787f242a2265ef2d03879a",
+        "patch/scripts/gadi_search.py": "471a6227a9f2452d80b0f34a68885b9d3af12f076160e26233b710c2b69ede9c",
+        "patch/scripts/gadi_search.pbs": "be5b4ab822950b0220fc6c7ec8af5f6175dcf5574a182b4eae4cf6716bcd59ae"
+      },
+      "split_source": {
+        "manifest": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/waves/wave_000/cifar100_amcl_017.json",
+        "job_sha256": "a6139567cfe7fea2e047412a2f6550f28190537d5345069d2bdeb3f80a786737"
+      },
+      "numerical_policy": {
+        "precision": "amp_fp16",
+        "initial_scale": 1.0,
+        "grad_clip": 1.0,
+        "consecutive_overflow_limit": null
+      },
+      "adapter_sources": {
+        "patch/scripts/gadi_barlow_search.py": "379fcd559e959dcf09fdcf3f99c7fb21fdf46b47a030d8d76f8cddc5e79e7f70",
+        "patch/scripts/gadi_barlow_search.pbs": "ac9d1af187ae06d9212f3fdbfad6a00d7a3c2779d97525e0f5daed08110b429c",
+        "patch/train_barlow_amp.py": "e288dd21ceb37ba1840f1d748954ab2f6264fdbc36136b16d55b537d1d1fa029",
+        "patch/scripts/gadi_linear_search.py": "9c70a937bc16e77ccdd087a433c02ca92ca34904d3326561a76e41b8a9f8d392",
+        "patch/eval_linear.py": "0e5d58b500c61f334e5e310ab314356cc6ca08af3c573b5ab4ca46788af813ff"
+      }
+    }
+  ]
+}

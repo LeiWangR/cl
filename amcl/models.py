@@ -239,7 +239,7 @@ class BarlowTwins(nn.Module):
 
 
 class MoCo(nn.Module):
-    """Symmetric MoCo-style two-view objective with a momentum key encoder."""
+    """Query-to-key/queue objective with a momentum key encoder."""
 
     def __init__(
         self,
@@ -262,6 +262,7 @@ class MoCo(nn.Module):
         if not (0.0 <= momentum < 1.0):
             raise ValueError("momentum must satisfy 0 <= momentum < 1")
         self.encoder_q, dim = resnet_cifar(depth)
+        self.encoder_dim = dim
         self.encoder_k = copy.deepcopy(self.encoder_q)
         self.projector_q = MultiHeadProjector(dim, 512, proj_dim, num_heads, "simclr")
         self.projector_k = copy.deepcopy(self.projector_q)
@@ -301,14 +302,13 @@ class MoCo(nn.Module):
 
     @torch.no_grad()
     def _dequeue_and_enqueue(self, keys: torch.Tensor):
-        keys = F.normalize(keys.float(), dim=-1)
+        keys = F.normalize(keys.float(), dim=-1)[-self.queue_size:]
         b = keys.size(0)
-        if b > self.queue_size:
-            keys = keys[-self.queue_size :]
-            b = keys.size(0)
         ptr = int(self.queue_ptr.item())
-        for i in range(b):
-            self.queue[:, :, (ptr + i) % self.queue_size] = keys[i]
+        first = min(b, self.queue_size - ptr)
+        self.queue[:, :, ptr:ptr + first].copy_(keys[:first].permute(1, 2, 0))
+        if first < b:
+            self.queue[:, :, :b - first].copy_(keys[first:].permute(1, 2, 0))
         self.queue_ptr[0] = (ptr + b) % self.queue_size
 
     def _encode_key(self, x):

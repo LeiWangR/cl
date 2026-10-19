@@ -1,0 +1,43 @@
+{
+  "name": "cifar10_moco_amcl",
+  "test_top1_percent": 89.76,
+  "checkpoint_kind": "encoder_and_classifier",
+  "host": "runpod",
+  "files": [
+    {
+      "name": "best.pt",
+      "source": "/workspace/amcl-moco-search/patch/runs/moco_oneway_full_cifar10_beta1e5_20261017/training/cifar10_moco_amcl_beta1e5.best.pt",
+      "bytes": 152606667,
+      "sha256": "b239176daf9921f5138d1794c15a1397abbe8aa7ffef6d4daf986e8a8a6c0d69"
+    },
+    {
+      "name": "linear_probe.pt",
+      "source": "/workspace/amcl-moco-search/patch/runs/moco_oneway_full_cifar10_beta1e5_20261017/training/best_linear_validation/cifar10_moco_amcl_beta1e5.pt",
+      "bytes": 44774859,
+      "sha256": "9ef1f507224ddeef5cabb7cc62615a3a2c77e1ccf449f1e9743cc0b7d87a4c05"
+    },
+    {
+      "name": "result.json",
+      "source": "/workspace/amcl-moco-search/patch/runs/moco_oneway_full_cifar10_beta1e5_20261017/training/best_linear_validation/cifar10_moco_amcl_beta1e5.json",
+      "bytes": 1491,
+      "sha256": "949834aff7f2ac0228e65c1c7bb17eb1b1239c1c5a8c8a4fb8531155ca58a1b2"
+    },
+    {
+      "name": "protocol.json",
+      "source": "/workspace/amcl-moco-search/patch/runs/moco_oneway_full_cifar10_beta1e5_20261017/training/protocol.json",
+      "bytes": 539863,
+      "sha256": "bf02721daa56e5db07a5073703b2486db7e24b81698158453a6592380b175c5c"
+    },
+    {
+      "name": "training.json",
+      "source": "/workspace/amcl-moco-search/patch/runs/moco_oneway_full_cifar10_beta1e5_20261017/training/cifar10_moco_amcl_beta1e5.json",
+      "bytes": 468594,
+      "sha256": "2fa80ea3e68b93a514dc2075967007948e1f64d207f33b0c43b49b01451454b3"
+    }
+  ],
+  "seed": 0,
+  "checksum_verified": true,
+  "note": "linear_probe.pt contains the selected encoder and trained classifier used for the recorded official-test result.",
+  "encoder_epoch": 950,
+  "core_load_verified": true
+}

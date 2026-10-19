@@ -1,0 +1,55 @@
+{
+  "status": "completed",
+  "scope": "official_test",
+  "pbs_job_id": "181036587.gadi-pbs",
+  "metadata": {
+    "dataset": "cifar10",
+    "tid": 100,
+    "train_examples": 45000,
+    "validation_examples": 5000,
+    "test_examples": 10000,
+    "split_sha256": "151fb65cea8535b22f389752caa203327a040c34941ba81c630e3c72f533d78d",
+    "source_checkpoint": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/trials/cifar10_amcl_100/best.pt",
+    "source_checkpoint_sha256": "bcd7577f676045ea4dc38d3fcdc618d69565092d3eb91932b89c7e46e0306b12",
+    "encoder_epoch": 950,
+    "probe_epochs": 200,
+    "lr": 1.0,
+    "weight_decay": 0.0,
+    "momentum": 0.9,
+    "batch_size": 512,
+    "seed": 0,
+    "scheduler": "cosine",
+    "config": {
+      "name": "cifar10_050",
+      "dataset": "cifar10",
+      "tid": 100,
+      "checkpoint": "best",
+      "lr": 1.0,
+      "weight_decay": 0.0,
+      "epochs": 200,
+      "manifest": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/waves/wave_000/cifar10_amcl_100.json",
+      "manifest_sha256": "cb3e07070c157bb4dc68a35a62be813b7f0534539dc66b2be222a9dfc64dd827",
+      "checkpoint_path": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/trials/cifar10_amcl_100/best.pt",
+      "checkpoint_sha256": "bcd7577f676045ea4dc38d3fcdc618d69565092d3eb91932b89c7e46e0306b12",
+      "worker_sources": {
+        "patch/scripts/gadi_linear_search.py": "9c70a937bc16e77ccdd087a433c02ca92ca34904d3326561a76e41b8a9f8d392",
+        "patch/scripts/gadi_linear_search.pbs": "b881cd33c48571f0dad230ec66b80908211ac6380a3470f49122076143f5bf0c",
+        "eval_linear.py": "e6c139992dc9f512b39aebded73894149421202a02787f242a2265ef2d03879a"
+      }
+    },
+    "linear_selection": {
+      "scope": "validation",
+      "tie_break": "earliest_epoch",
+      "epoch": 117,
+      "correct": 4530,
+      "examples": 5000,
+      "accuracy": 0.906
+    }
+  },
+  "test": {
+    "correct": 9016,
+    "examples": 10000,
+    "accuracy": 0.9016
+  },
+  "elapsed_seconds": 6.2229333790019155
+}

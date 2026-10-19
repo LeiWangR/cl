@@ -1,0 +1,199 @@
+{
+  "jobs": [
+    {
+      "dataset": "cifar100",
+      "variant": "amcl",
+      "tid": 2,
+      "params": {
+        "beta": 0.017407998232692574,
+        "eta": 0.0017179731776498439,
+        "iota": 0.0016738835548634516,
+        "lr": 0.18034549067292038,
+        "topk": 150,
+        "weight_decay": 0.00011692142617847786
+      },
+      "mode": "trial",
+      "output": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/trials/cifar100_amcl_002",
+      "data_root": "/g/data/yp87/jz3513/datasets",
+      "split": "/g/data/yp87/jz3513/checkpoints/amcl/search_amcl_best50_400_direct_v1/splits/cifar100.json",
+      "split_sha256": "b470f1b4c42e2d441365c2a620e2ee79971f4fbf9055e5bed7459a12c64e7997",
+      "protocol": {
+        "version": 2,
+        "split_seed": 0,
+        "train_size": 45000,
+        "validation_size": 5000,
+        "aug": "abcde",
+        "ssl_epochs": 1000,
+        "linear_epochs": 100,
+        "batch_size": 512,
+        "train_seed": 0,
+        "probe_lr": 0.1,
+        "probe_weight_decay": 0,
+        "objective": "1-validation_linear_accuracy",
+        "trial_budget_per_study": 200,
+        "checkpoint_selection": "best_validation_knn",
+        "checkpoint_eval_every": 50,
+        "search_seed": 20261007,
+        "paper_alignment": "Published core settings; split and search distributions are local choices",
+        "ranges": {
+          "lr": [
+            0.01,
+            0.2
+          ],
+          "weight_decay": [
+            1e-06,
+            0.001
+          ],
+          "eta": [
+            1e-05,
+            2.0
+          ],
+          "iota": [
+            1e-05,
+            2.0
+          ],
+          "beta": [
+            1e-05,
+            10.0
+          ],
+          "topk": [
+            100,
+            150
+          ]
+        },
+        "search_algorithm": "hyperopt_amcl_random",
+        "paired_parameters": [],
+        "variants": [
+          "amcl"
+        ]
+      },
+      "source_sha256": {
+        "amcl/__init__.py": "ffb3a541d6d590ae2369dd022dda48d20ad3fb31006feaa01661f9985cc35e20",
+        "amcl/augmentations.py": "fa37fa300da32cd3f28dc811af5c1af9b3424a8470e3231d7586af49bfb77c90",
+        "amcl/backbones.py": "15caa0d8ffe1ac0a2d7fbba0af4e2ad94cc1dea39290443a57668e9318eddc9c",
+        "amcl/datasets.py": "7b0b18c79452327e4ad276238cce6797f1bcb5a1cd3a6f3644dba6c64c6ad65e",
+        "amcl/evaluation.py": "61f9697af782f90708f575a3527021c668f18382667decde0a64438d55183bbf",
+        "amcl/losses.py": "8f9e1fda3b5557c03d71730af698609998dc6a46cb6f368eb955a680092e9b08",
+        "amcl/models.py": "6ad2824e18e973b1632a5829a8e9c19f8e69528e5304b805d7ef4c5220e98941",
+        "amcl/train.py": "9ae8644bec12c0776314b90386a800b9b73e8ac9cbe62074f6e845614d08a5bf",
+        "patch/train.py": "59b08d8b91f2a5d973dda373fd948c978ef67ac17e2dd15500a807119c2b006d",
+        "eval_linear.py": "e6c139992dc9f512b39aebded73894149421202a02787f242a2265ef2d03879a",
+        "patch/scripts/gadi_search.py": "471a6227a9f2452d80b0f34a68885b9d3af12f076160e26233b710c2b69ede9c",
+        "patch/scripts/gadi_search.pbs": "be5b4ab822950b0220fc6c7ec8af5f6175dcf5574a182b4eae4cf6716bcd59ae"
+      },
+      "search_config": {
+        "version": 4,
+        "trials_per_pbs": 1,
+        "budget_per_study": 200,
+        "batch_per_study": 200,
+        "search_algorithm": "hyperopt_amcl_random",
+        "paired_parameters": [],
+        "search_seed": 20261007,
+        "data_root": "/g/data/yp87/jz3513/datasets",
+        "smoke_root": "/g/data/yp87/jz3513/checkpoints/amcl/search_checks/180726963.gadi-pbs",
+        "smoke_manifest_sha256": "67145fa576e1b1f3aac365ac422a563035d38820e1b2d8039c5a6fb4102dc5a1",
+        "smoke_verification": "skipped_by_user",
+        "worker_sources": {
+          "amcl/__init__.py": "ffb3a541d6d590ae2369dd022dda48d20ad3fb31006feaa01661f9985cc35e20",
+          "amcl/augmentations.py": "fa37fa300da32cd3f28dc811af5c1af9b3424a8470e3231d7586af49bfb77c90",
+          "amcl/backbones.py": "15caa0d8ffe1ac0a2d7fbba0af4e2ad94cc1dea39290443a57668e9318eddc9c",
+          "amcl/datasets.py": "7b0b18c79452327e4ad276238cce6797f1bcb5a1cd3a6f3644dba6c64c6ad65e",
+          "amcl/evaluation.py": "61f9697af782f90708f575a3527021c668f18382667decde0a64438d55183bbf",
+          "amcl/losses.py": "8f9e1fda3b5557c03d71730af698609998dc6a46cb6f368eb955a680092e9b08",
+          "amcl/models.py": "6ad2824e18e973b1632a5829a8e9c19f8e69528e5304b805d7ef4c5220e98941",
+          "amcl/train.py": "9ae8644bec12c0776314b90386a800b9b73e8ac9cbe62074f6e845614d08a5bf",
+          "patch/train.py": "59b08d8b91f2a5d973dda373fd948c978ef67ac17e2dd15500a807119c2b006d",
+          "eval_linear.py": "e6c139992dc9f512b39aebded73894149421202a02787f242a2265ef2d03879a",
+          "patch/scripts/gadi_search.py": "471a6227a9f2452d80b0f34a68885b9d3af12f076160e26233b710c2b69ede9c",
+          "patch/scripts/gadi_search.pbs": "be5b4ab822950b0220fc6c7ec8af5f6175dcf5574a182b4eae4cf6716bcd59ae"
+        },
+        "coordinator_sources": {
+          "patch/scripts/gadi_search_parallel.py": "85ecd49b072027a81d9f0fb17717758b802b9c57c276a47c75bf0f1268c86104",
+          "patch/scripts/gadi_search_parallel.pbs": "16ad104989e8e876a15447122d2721799ce56cda332c311abd2e56bc67c0b695"
+        }
+      },
+      "method_sampling_seed": 1765908444
+    }
+  ],
+  "protocol": {
+    "version": 2,
+    "split_seed": 0,
+    "train_size": 45000,
+    "validation_size": 5000,
+    "aug": "abcde",
+    "ssl_epochs": 1000,
+    "linear_epochs": 100,
+    "batch_size": 512,
+    "train_seed": 0,
+    "probe_lr": 0.1,
+    "probe_weight_decay": 0,
+    "objective": "1-validation_linear_accuracy",
+    "trial_budget_per_study": 200,
+    "checkpoint_selection": "best_validation_knn",
+    "checkpoint_eval_every": 50,
+    "search_seed": 20261007,
+    "paper_alignment": "Published core settings; split and search distributions are local choices",
+    "ranges": {
+      "lr": [
+        0.01,
+        0.2
+      ],
+      "weight_decay": [
+        1e-06,
+        0.001
+      ],
+      "eta": [
+        1e-05,
+        2.0
+      ],
+      "iota": [
+        1e-05,
+        2.0
+      ],
+      "beta": [
+        1e-05,
+        10.0
+      ],
+      "topk": [
+        100,
+        150
+      ]
+    },
+    "search_algorithm": "hyperopt_amcl_random",
+    "paired_parameters": [],
+    "variants": [
+      "amcl"
+    ]
+  },
+  "search_config": {
+    "version": 4,
+    "trials_per_pbs": 1,
+    "budget_per_study": 200,
+    "batch_per_study": 200,
+    "search_algorithm": "hyperopt_amcl_random",
+    "paired_parameters": [],
+    "search_seed": 20261007,
+    "data_root": "/g/data/yp87/jz3513/datasets",
+    "smoke_root": "/g/data/yp87/jz3513/checkpoints/amcl/search_checks/180726963.gadi-pbs",
+    "smoke_manifest_sha256": "67145fa576e1b1f3aac365ac422a563035d38820e1b2d8039c5a6fb4102dc5a1",
+    "smoke_verification": "skipped_by_user",
+    "worker_sources": {
+      "amcl/__init__.py": "ffb3a541d6d590ae2369dd022dda48d20ad3fb31006feaa01661f9985cc35e20",
+      "amcl/augmentations.py": "fa37fa300da32cd3f28dc811af5c1af9b3424a8470e3231d7586af49bfb77c90",
+      "amcl/backbones.py": "15caa0d8ffe1ac0a2d7fbba0af4e2ad94cc1dea39290443a57668e9318eddc9c",
+      "amcl/datasets.py": "7b0b18c79452327e4ad276238cce6797f1bcb5a1cd3a6f3644dba6c64c6ad65e",
+      "amcl/evaluation.py": "61f9697af782f90708f575a3527021c668f18382667decde0a64438d55183bbf",
+      "amcl/losses.py": "8f9e1fda3b5557c03d71730af698609998dc6a46cb6f368eb955a680092e9b08",
+      "amcl/models.py": "6ad2824e18e973b1632a5829a8e9c19f8e69528e5304b805d7ef4c5220e98941",
+      "amcl/train.py": "9ae8644bec12c0776314b90386a800b9b73e8ac9cbe62074f6e845614d08a5bf",
+      "patch/train.py": "59b08d8b91f2a5d973dda373fd948c978ef67ac17e2dd15500a807119c2b006d",
+      "eval_linear.py": "e6c139992dc9f512b39aebded73894149421202a02787f242a2265ef2d03879a",
+      "patch/scripts/gadi_search.py": "471a6227a9f2452d80b0f34a68885b9d3af12f076160e26233b710c2b69ede9c",
+      "patch/scripts/gadi_search.pbs": "be5b4ab822950b0220fc6c7ec8af5f6175dcf5574a182b4eae4cf6716bcd59ae"
+    },
+    "coordinator_sources": {
+      "patch/scripts/gadi_search_parallel.py": "85ecd49b072027a81d9f0fb17717758b802b9c57c276a47c75bf0f1268c86104",
+      "patch/scripts/gadi_search_parallel.pbs": "16ad104989e8e876a15447122d2721799ce56cda332c311abd2e56bc67c0b695"
+    }
+  }
+}
